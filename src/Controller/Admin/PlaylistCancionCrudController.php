@@ -2,33 +2,29 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Cancion;
+use App\Entity\PlaylistCancion;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class CancionCrudController extends AbstractCrudController
+class PlaylistCancionCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Cancion::class;
+        return PlaylistCancion::class;
     }
 
-
+    
     public function configureFields(string $pageName): iterable
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('titulo'),
-            TextField::new('album'),
-            TextField::new('autor'),
-            NumberField::new('likes'),
-            NumberField::new('duracion'),
-            AssociationField::new('genero','Estilo'),
-            
+            AssociationField::new('playlist','Playlist')
+                ->hideOnForm()->setFormTypeOption('by_reference',true),
+            AssociationField::new('cancion','Cancion')
+                ->setFormTypeOption('by_reference',true),
         ];
     }
     

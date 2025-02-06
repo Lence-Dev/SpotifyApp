@@ -50,7 +50,10 @@ class Cancion
         $this->playlistCancions = new ArrayCollection();
         $this->usuarios = new ArrayCollection();
     }
-
+    public function __toString(): string
+    {
+        return $this->getTitulo();
+    }
     public function getId(): ?int
     {
         return $this->id;

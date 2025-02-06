@@ -4,6 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Cancion;
 use App\Entity\Estilo;
+use App\Entity\Playlist;
+use App\Entity\PlaylistCancion;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -38,7 +40,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Gestión de tareas');
+            ->setTitle('Dashboard');
     }
 
     public function configureMenuItems(): iterable
@@ -46,6 +48,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Canciones', 'fas fa-list', Cancion::class);
         yield MenuItem::linkToCrud('Estilos', 'fas fa-list', Estilo::class);
+        yield MenuItem::linkToCrud('Playlists', 'fas fa-list', Playlist::class);
+        yield MenuItem::linkToCrud('Playlists Cancion', 'fas fa-list', PlaylistCancion::class);
+
 
     }
 }
