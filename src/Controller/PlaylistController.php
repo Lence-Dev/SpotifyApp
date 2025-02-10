@@ -33,4 +33,17 @@ final class PlaylistController extends AbstractController
             'path' => 'src/PlaylistController.php'
         ]);
     }
+
+    #[Route('/mostrar/playlist', name:'mostrar_playlists')]
+    public function mostrarCanciones(EntityManagerInterface $e)
+    {
+        $playlistRepository = $e->getRepository(Playlist::class);
+        $playlists = $playlistRepository->findAll();
+
+        $info=[];
+        foreach($playlists as $playlist){
+            $info[]=['nombre'=>$playlist->getNombre()];
+        }
+        return $this->json($info);
+    }
 }

@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    background-color: #191414;
+    color: #ffffff;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1DB954;
+}
+
+.logo-container img {
+    height: 50px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-container input {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #121212;
+    color: #ffffff;
+    border: 1px solid #1DB954;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #1DB954;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #17a34a;
+}
+
+.access-container img {
+    height: 50px;
+}
+
+.main-nav {
+    background-color: #282828;
+    padding: 10px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.main-nav a:hover {
+    color: #1DB954;
+}
+
+.content {
+    padding: 20px;
+}
+
+.songs-section {
+    margin-top: 20px;
+}
+
+.main-footer {
+    background-color: #282828;
+    text-align: center;
+    padding: 10px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
